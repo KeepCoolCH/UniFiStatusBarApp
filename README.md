@@ -21,6 +21,12 @@ Features include:
 
 ---
 
+## 📸 Screenshot
+
+![Screenshot](https://online.kevintobler.ch/projectimages/UniFiStatusBarAppPanel.png)
+
+---
+
 ## ⚙️ Requirements
 
 - **macOS 14.6 (Sonoma)** or newer  
