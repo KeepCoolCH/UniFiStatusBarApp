@@ -1,3 +1,5 @@
+![Screenshot](https://online.kevintobler.ch/projectimages/UniFiStatusBarApp.png)
+
 # 📡 UniFi Status Bar App
 
 **Monitor your UniFi Network directly from the macOS menu bar** —  
