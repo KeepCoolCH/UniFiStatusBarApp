@@ -4,7 +4,7 @@
 
 **Monitor your UniFi Network directly from the macOS menu bar** —  
 view gateway health, connected devices, live throughput, PoE stats, and client information in real-time.  
-Developed by **Kevin Tobler** 🌐 [www.kevintobler.ch](https://www.kevintobler.ch)
+Version **2.0** – developed by  **Kevin Tobler** 🌐 [www.kevintobler.ch](https://www.kevintobler.ch)
 
 ---
 
@@ -21,9 +21,26 @@ Features include:
 
 ---
 
+## 🔄 Changelog
+
+### 🆕 Version 2.x
+- **2.0**
+  - 🌳 **Topology View:** Devices and clients are shown as a live tree (uplink relationships).
+  - 🌐 **WAN Details:** WAN 1/2 IP + ISP shown in Overview and Network entries.
+  - 🧭 **Menu Bar WAN Status:** WAN 1/2 IP + ISP shown directly in the menu bar panel.
+  - 🧠 **Smarter Device Labels:** Improved model detection (e.g., UCG Fiber and new model fields).
+  - 🔎 **Network Tab Enhancements:** WAN info is displayed inline with Internet networks.
+
+### 🆕 Version 1.x
+- **1.0**
+  - 🔁 Initial Release
+
+---
+
 ## 📸 Screenshot
 
-![Screenshot](https://online.kevintobler.ch/projectimages/UniFiStatusBarAppPanel.png)
+![Screenshot](https://online.kevintobler.ch/projectimages/UniFiStatusBarAppPanelV2-menubar.png)
+![Screenshot](https://online.kevintobler.ch/projectimages/UniFiStatusBarAppPanelV2-overview.png)
 
 ---
 
@@ -50,28 +67,6 @@ When starting the app for the first time:
 2. A small settings window appears asking for your **API Key**
 3. Paste your UniFi key and press **💾 Save and Connect**
 4. The app refreshes automatically and starts displaying live stats
-
----
-
-## 🧱 Features
-
-| Category | Description |
-|-----------|--------------|
-| 🌐 **Controller** | Shows online/offline status and UniFi subsystems |
-| 🧩 **Devices** | Lists all UniFi devices (Gateway, Switches, APs) |
-| 📊 **Clients** | Displays connected clients, signal strength, and uptime |
-| ⚡ **PoE Stats** | Detects total PoE draw per device |
-| 🔄 **Auto-Refresh** | Updates data every 2 seconds |
-| 🔒 **Local Access** | Works entirely offline (via HTTPS API) |
-
----
-
-## 🎨 UI & Behavior
-
-- 🧭 **Menu Bar Icon:**
-- ⚙️ **Settings Button:** Opens API key window
-- 💾 **Save and Connect:** Stores your key securely
-- 🔁 **Auto-Reload:** When API key is saved, app reconnects automatically
 
 ---
 

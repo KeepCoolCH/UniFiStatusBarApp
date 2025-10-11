@@ -1,11 +1,12 @@
 import SwiftUI
-import Combine
 import Foundation
+import Combine
 
 struct UniFiServiceConfig: Codable {
     var clientId: String = UUID().uuidString
     var clientName: String = Host.current().localizedName ?? "Mac"
     var apiKey: String? = nil
+    var controllerHost: String? = nil
 }
 
 @MainActor
@@ -15,12 +16,10 @@ final class ServiceManager: ObservableObject {
     // Dynamischer Speicherort
     private var configURL: URL {
         #if DEBUG
-        // 🧠 Im Debug-Build: Auf Desktop speichern (sichtbar und sicher)
         return FileManager.default
             .homeDirectoryForCurrentUser
             .appendingPathComponent("Desktop/UniFiStatusBar_service.json")
         #else
-        // 🚀 Im Release-Build: In Application Support
         return FileManager.default
             .urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("UniFiStatusBar/service.json")
@@ -39,6 +38,7 @@ final class ServiceManager: ObservableObject {
             } else {
                 print("⚠️ No config file found, using defaults.")
             }
+            migrateApiKeyIfNeeded()
         } catch {
             print("❌ Failed to load config:", error.localizedDescription)
         }
@@ -52,6 +52,7 @@ final class ServiceManager: ObservableObject {
 
             try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
 
+            migrateApiKeyIfNeeded()
             let data = try JSONEncoder().encode(config)
             try data.write(to: configURL, options: .atomic)
 
@@ -61,5 +62,24 @@ final class ServiceManager: ObservableObject {
             print("❌ Failed to save config:", error.localizedDescription)
         }
     }
-}
 
+    func loadApiKey() -> String? {
+        KeychainManager.read(.apiKey) ?? config.apiKey
+    }
+
+    func saveApiKey(_ apiKey: String) {
+        if apiKey.isEmpty {
+            KeychainManager.delete(.apiKey)
+        } else {
+            _ = KeychainManager.save(apiKey, for: .apiKey)
+        }
+        config.apiKey = nil
+    }
+
+    private func migrateApiKeyIfNeeded() {
+        guard let apiKey = config.apiKey, !apiKey.isEmpty else {
+            return
+        }
+        saveApiKey(apiKey)
+    }
+}
