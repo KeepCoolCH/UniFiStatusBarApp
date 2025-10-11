@@ -15,12 +15,12 @@ final class ServiceManager: ObservableObject {
     // Dynamischer Speicherort
     private var configURL: URL {
         #if DEBUG
-        // 🧠 Im Debug-Build: Auf Desktop speichern (sichtbar und sicher)
+        // 🧠 In Debug-Build: Desktop
         return FileManager.default
             .homeDirectoryForCurrentUser
             .appendingPathComponent("Desktop/UniFiStatusBar_service.json")
         #else
-        // 🚀 Im Release-Build: In Application Support
+        // 🚀 In Release-Build: Application Support
         return FileManager.default
             .urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("UniFiStatusBar/service.json")
