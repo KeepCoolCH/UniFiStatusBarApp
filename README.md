@@ -56,7 +56,7 @@ Features include:
 
 ### Download Prebuilt App
 
-[![Download UniFiStatusBarApp](https://img.shields.io/badge/Download-UniFiStatusBarApp-blue)](https://github.com/KeepCoolCH/UniFiStatusBarApp/raw/refs/heads/main/UniFiStatusBarApp.zip)
+[![Download UniFiStatusBarApp](https://img.shields.io/badge/Download-UniFiStatusBarApp-blue)](https://github.com/KeepCoolCH/UniFiStatusBarApp/releases/tag/V.2.0)
 
 - Unzip the App and run it or move it to the Applications folder
 
