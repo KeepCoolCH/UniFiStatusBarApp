@@ -1,4 +1,8 @@
-# ![App Icon](https://online.kevintobler.ch/projectimages/UniFiStatusBarAppV2.png) UniFi Status Bar App
+![Hero Screenshot](https://online.kevintobler.ch/projectimages/UniFiStatusBarApp-Banner.jpg)
+
+# UniFiStatusBarApp for macOS
+
+[![Download UniFiStatusBarApp](https://img.shields.io/badge/Download-UniFiStatusBarApp-blue)](https://github.com/KeepCoolCH/UniFiStatusBarApp/releases/tag/V.2.0)
 
 **Monitor your UniFi Network directly from the macOS menu bar** —  
 view gateway health, connected devices, live throughput, PoE stats, and client information in real-time.  
